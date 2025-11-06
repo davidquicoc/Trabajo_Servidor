@@ -20,6 +20,10 @@
     --azul_marino: #232F53;
     --azul_oscuro: #151D32;
     --negro: #080A12;
+
+    --bordes: 1.5px solid var(--azul_claro_tri);
+   --transition: all 0.3s ease;
+
 }
 
 /* BODY */
@@ -42,10 +46,6 @@ body{
     background: var(--azul_claro_one);
     border-radius: 10px;
     box-shadow: 0 0 10px rgb(0, 0, 0, 0.1);
-    display: none;
-}
-
-.form-content.active{
     display: block;
 }
 
@@ -55,8 +55,7 @@ h2{
     margin-bottom: 30px;
 }
 
-input,
-select{
+input{
     width: 100%;
     padding: 12px;
     background: var(--azul_claro_secundario);
@@ -68,13 +67,18 @@ select{
     margin-bottom: 20px;
 }
 
+input:hover{
+    border: var(--bordes);
+    transition: var(--transition);
+}
+
 button{
     width: 100%;
     padding: 8px;
     font-size: 18px;
     border-radius: 6px;
     background-color: var(--azul_claro_secundario);
-    border: 1px solid var(--azul_claro_tri);
+    border: var(--bordes);
 }
 
 /* HEADER */
