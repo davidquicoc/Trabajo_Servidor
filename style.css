@@ -42,11 +42,6 @@ body{
     background: var(--azul_claro_one);
     border-radius: 10px;
     box-shadow: 0 0 10px rgb(0, 0, 0, 0.1);
-    display: none;
-}
-
-.form-content.active{
-    display: block;
 }
 
 h2{
