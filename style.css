@@ -70,6 +70,20 @@ button{
     border-radius: 6px;
     background-color: var(--azul_claro_secundario);
     border: 1px solid var(--azul_claro_tri);
+    cursor: pointer;
+    margin-bottom: 3.5px;
+}
+
+.parrafo-form:first-of-type {
+    margin-bottom: 10px;
+}
+
+.parrafo-form:last-child {
+    margin-top: 10px;
+}
+
+.error-mensaje {
+    color: #ff5c5c;
 }
 
 /* HEADER */
