@@ -1,3 +1,6 @@
+<?php 
+    require_once 'config.php';
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -28,7 +31,40 @@
             <?php
                 
             ?>
-            <h1>Inicia sesión para ver tu carrito</h1>
+            <?php 
+                $_SESSION['nombre'] = "Homero";
+                
+                if(!isset($_SESSION['nombre'])){ 
+                    echo "<h1 class='encabezado'>Inicia sesión para ver tu carrito</h1>";
+                    echo "<a href='login.html'>Inicio Sesión</a>";
+                }else{
+                    $_SESSION['dni'] = "05309480E";
+                    $dni = $_SESSION['dni'];
+
+                    $mostrarProductos = $conn->query("SELECT * FROM carrito WHERE dni = '$dni'");
+
+                    if($mostrarProductos->num_rows > 0){
+                        echo "<h1 class='encabezado'>Tus productos</h1>";
+                        while ($producto = $mostrarProductos->fetch_assoc()) {
+                        echo "<div class='producto'>
+                            <div class='img-cuadrada'>
+                                <img src='" . $producto['imagen'] . "' alt='" . $producto['nombre'] . "'>
+                            </div>
+                            <h3>'" . $producto['nombre'] . "'</h3>
+                            <p class='precio'>Precio: '" . $producto['precio'] . "' €</p>
+                            <p class='descripcion'>'" .$producto['descripcion'] . "'</p>
+                            <form action='añadir-carrito.php' method='POST'>
+                                <input type='hidden' name='id_producto' value='" .  $producto['id_producto'] . "'>
+                                <button type='submit'>Añadir al carrito</button>
+                            </form>
+                        </div>";
+                    }
+                    }else{
+                        echo "<p>No hay productos disponibles.</p>";
+                    }
+                }
+            ?>
+            
 
         </main>
     </div>
