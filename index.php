@@ -39,7 +39,7 @@ $carrito = $_SESSION['carrito'] ?? [];
 $carritoActivo = !empty($carrito) ? 'carrito-activo' : '';
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,7 +58,7 @@ $carritoActivo = !empty($carrito) ? 'carrito-activo' : '';
             <div class="header-nav">            
                 <?php
                 if (isset($_SESSION['nombre'])) {
-                    echo "<a href=#><i class='fa-solid fa-cart-shopping $carritoActivo'></i></a>";
+                    echo "<a href='carrito.php'><i class='fa-solid fa-cart-shopping $carritoActivo'></i></a>";
                     echo "<p>" . $_SESSION['nombre'] . ". <a href='logout.php'>Cerrar sesión</a></p>";
                 } else {
                     echo "<p>Usted no se ha identificado. (<a href='login.php'>Acceder</a>)</p>";
@@ -69,7 +69,7 @@ $carritoActivo = !empty($carrito) ? 'carrito-activo' : '';
         <main>
             <h2>Productos disponibles</h2>
             <form method="GET" action="index.php">
-                <select name="orden">
+                <select name="orden" class="select-sql">
                     <option value="">-- Ordenar por --</option>
                     <option value="id_asc">ID (más antiguos)</option>
                     <option value="id_desc">ID (más nuevos)</option>
@@ -78,7 +78,7 @@ $carritoActivo = !empty($carrito) ? 'carrito-activo' : '';
                     <option value="nombre_asc">Nombre A-Z</option>
                     <option value="nombre_desc">Nombre Z-A</option>
                 </select>
-                <button type="submit">Aplicar</button>
+                <button type="submit" class="button-select">Aplicar</button>
             </form>
             <section class="productos">
             <?php
@@ -93,7 +93,7 @@ $carritoActivo = !empty($carrito) ? 'carrito-activo' : '';
                             <p class='descripcion'>'" .$producto['descripcion'] . "'</p>
                             <form action='añadir-carrito.php' method='POST'>
                                 <input type='hidden' name='id_producto' value='" .  $producto['id'] . "'>
-                                <button type='submit'>Añadir al carrito</button>
+                                <button type='submit' class='button-producto'>Añadir al carrito</button>
                             </form>
                         </div>";
                     }

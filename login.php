@@ -11,7 +11,7 @@ unset($_SESSION['login-error']);
 //session_unset();
 
 function errorLogin($error) {
-    return !empty($error) ? "<p class='error-mensaje parrafo-form'>$error</p>" : '';
+    return !empty($error) ? "<p class='mensaje-error'>$error</p>" : '';
 }
 ?>
 
@@ -20,7 +20,7 @@ function errorLogin($error) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/form-style.css">
     <title>Inicio sesión</title>
 </head>
 <body>
@@ -36,7 +36,7 @@ function errorLogin($error) {
                 <input type="password" name="password" id="password" placeholder="Contraseña" required>
                 <button type="submit">Enviar</button>
             </form>
-            <p class="parrafo-form">No tienes una cuenta. <a href="registro.php">Registrate aquí</a></p>
+            <p class="enlace">No tienes una cuenta. <a href="registro.php">Registrate aquí</a></p>
         </div>
     </div>
 

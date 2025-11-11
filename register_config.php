@@ -52,7 +52,7 @@
             }else{
                 $checkDNI = $conn->query("SELECT dni FROM usuarios WHERE dni = '$dni'");
                 if($checkDNI->num_rows > 0){
-                    $_SESSION['email_registrado'] = "El email ya esta registrado";
+                    $_SESSION['dni_registrado'] = "El DNI ya esta registrado";
                     $hay_errores_individuales = true;
                 }
             }
@@ -64,7 +64,7 @@
         }else{
             $checkEmail = $conn->query("SELECT correo FROM usuarios WHERE correo = '$email'");
                 if($checkDNI->num_rows > 0){
-                    $_SESSION['dni_registrado'] = "El DNI ya esta registrado";
+                    $_SESSION['email_registrado'] = "El email ya esta registrado";
                     $hay_errores_individuales = true;
                 }
         }
@@ -98,10 +98,10 @@ if(!$hay_errores_individuales){
         $_SESSION['error_db'] = "Error en la preparación de la consulta: " . $conn->error;
     }
 
-    header("Location: ../Trabajo_Servidor/registro.php");
+    header("Location: registro.php");
     exit();
 } else {
-    header("Location: ../Trabajo_Servidor/registro.php");
+    header("Location: registro.php");
     exit();
 }
 ?>

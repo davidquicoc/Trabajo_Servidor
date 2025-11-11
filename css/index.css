@@ -8,6 +8,7 @@
 }
 
 :root{
+    --azul_brillante: #0000FF;
     --azul_claro_one: #EDF0F7;
     --azul_claro_secundario: #d6dff1;
     --azul_claro_chu: #CDD4EA;
@@ -20,6 +21,10 @@
     --azul_marino: #232F53;
     --azul_oscuro: #151D32;
     --negro: #080A12;
+
+    --bordes: 1.5px solid var(--azul_claro_tri);
+   --transition: all 0.3s ease;
+
 }
 
 /* BODY */
@@ -96,9 +101,11 @@ main {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 40px;
 }
 
 main h2 {
+    margin: 10px 0;
     text-transform: uppercase;
 }
 
@@ -153,4 +160,42 @@ main h2 {
 .producto .descripcion {
     color: var(--azul_oscuro);
     font-size: 0.95em;
+}
+
+.select-sql {
+    border-radius: 5px;
+    padding: 2px 3.5px;
+    border: var(--bordes);
+}
+
+.button-select {
+    padding: 7.5px 15px;
+    font-size: "Lato", sans-serif;
+    border-radius: 10px;
+    color: var(--azul_claro_one);
+    background-color: var(--azul_oscuro);
+    transition: var(--transition);
+    border: none;
+    text-transform: uppercase;
+}
+
+.button-select:hover {
+    background-color: var(--azul_grisaceo);
+    color: var(--negro);
+    border-radius: 4px;
+    border: var(--bordes);
+}
+
+.button-producto {
+    padding: 12px;
+    margin-top: 12px;
+    font-size: 18px;
+    border-radius: 6px;
+    background-color: var(--azul_claro_secundario);
+    border: none;
+    transition: var(--transition);
+}
+
+.button-producto:hover{
+    border: var(--bordes);
 }

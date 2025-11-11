@@ -34,7 +34,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/form-style.css">
     <title>Inicio sesión y registro</title>
 </head>
 <body>
@@ -43,7 +43,7 @@
         
         <!--REGISTRO-->
         <div class="form-content">
-            <form action="../Trabajo_Servidor/register_config.php" method="POST">
+            <form action="register_config.php" method="POST">
                 <h2>Registarse</h2>
 
                 <?= mostrarErrores($errores['todos'])?>
