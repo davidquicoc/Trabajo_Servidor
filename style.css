@@ -8,6 +8,7 @@
 }
 
 :root{
+    --azul_brillante: #0000FF;
     --azul_claro_one: #EDF0F7;
     --azul_claro_secundario: #d6dff1;
     --azul_claro_chu: #CDD4EA;
@@ -79,6 +80,42 @@ button{
     border-radius: 6px;
     background-color: var(--azul_claro_secundario);
     border: var(--bordes);
+}
+
+button:hover{
+    border: var(--bordes);
+    transition: var(--transition);
+}
+
+.mensaje-error{
+    text-align: center;
+    background: #f8d7da;
+    color: #a42834;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+.mensaje-correcto{
+    text-align: center;
+    background: rgba(76, 175, 80, 0.2);
+    color: var(--success-color);
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+.enlace{
+    margin-bottom: 20px;
+}
+
+.enlace a{
+    text-decoration: none;
+    color: var(--negro);
+}
+
+.enlace a:hover{
+    color: var(--azul_brillante);
 }
 
 /* HEADER */
