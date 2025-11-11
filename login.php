@@ -36,7 +36,7 @@ function errorLogin($error) {
                 <input type="password" name="password" id="password" placeholder="Contraseña" required>
                 <button type="submit">Enviar</button>
             </form>
-            <p class="parrafo-form">No tienes una cuenta. <a href="register.php">Registrate aquí</a></p>
+            <p class="parrafo-form">No tienes una cuenta. <a href="registro.php">Registrate aquí</a></p>
         </div>
     </div>
 

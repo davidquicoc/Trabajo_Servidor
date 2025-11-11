@@ -47,10 +47,7 @@ body{
     background: var(--azul_claro_one);
     border-radius: 10px;
     box-shadow: 0 0 10px rgb(0, 0, 0, 0.1);
-<<<<<<< HEAD
-=======
     display: block;
->>>>>>> register
 }
 
 h2{
@@ -82,23 +79,6 @@ button{
     font-size: 18px;
     border-radius: 6px;
     background-color: var(--azul_claro_secundario);
-<<<<<<< HEAD
-    border: 1px solid var(--azul_claro_tri);
-    cursor: pointer;
-    margin-bottom: 3.5px;
-}
-
-.parrafo-form:first-of-type {
-    margin-bottom: 10px;
-}
-
-.parrafo-form:last-child {
-    margin-top: 10px;
-}
-
-.error-mensaje {
-    color: #ff5c5c;
-=======
     border: var(--bordes);
 }
 
@@ -125,18 +105,17 @@ button:hover{
     border-radius: 6px;
 }
 
-.enlace{
+.enlace {
     margin-bottom: 20px;
 }
 
-.enlace a{
+.enlace a {
     text-decoration: none;
     color: var(--negro);
 }
 
 .enlace a:hover{
     color: var(--azul_brillante);
->>>>>>> register
 }
 
 /* HEADER */

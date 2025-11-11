@@ -34,7 +34,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Trabajo_Servidor/style.css">
+    <link rel="stylesheet" href="./style.css">
     <title>Inicio sesión y registro</title>
 </head>
 <body>
@@ -64,7 +64,7 @@
                 <input type="email" name="email" id="email" placeholder="Correo electrónico" >
                 <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña" >
                 
-                <p class="enlace">¿Ya tienes cuenta? <a href="#">Iniciar Sesión</a></p>
+                <p class="enlace">¿Ya tienes cuenta? <a href="login.php">Iniciar Sesión</a></p>
 
                 <button type="submit">Enviar</button>
             </form>
