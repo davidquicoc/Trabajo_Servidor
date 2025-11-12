@@ -92,7 +92,12 @@ $carritoActivo = !empty($carrito) ? 'carrito-activo' : '';
                             <p class='precio'>Precio: '" . $producto['precio'] . "' €</p>
                             <p class='descripcion'>'" .$producto['descripcion'] . "'</p>
                             <form action='añadir-carrito.php' method='POST'>
+                                <input type='hidden' name='dni' value '" . $_SESSION['dni'] . "'>;
                                 <input type='hidden' name='id_producto' value='" .  $producto['id'] . "'>
+                                <input type='hidden' name='nombre' value='" . $producto['nombre'] . "'>
+                                <input type='hidden' name='descripcion' value='" . $producto['descripcion'] . "'>
+                                <input type='hidden' name='precio' value='" . $producto['precio'] . "'>
+                                <input type='hidden' name='imagen' value='" . $producto['imagen'] . "'>
                                 <button type='submit' class='button-producto'>Añadir al carrito</button>
                             </form>
                         </div>";
