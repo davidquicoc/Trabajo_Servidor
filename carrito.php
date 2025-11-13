@@ -56,6 +56,8 @@
                             <p class='precio'>Precio: '" . $producto['precio'] . "' €</p>
                             <p class='descripcion'>'" .$producto['descripcion'] . "'</p>
                         </div>";
+                        }
+
                         echo "
                         <div class='boton-conteiner'>
                             <form action='borrar_carrito.php' method='POST'>
@@ -68,7 +70,7 @@
                             </form>
                         </div>
                         ";
-                    }
+
                     }else{
                         echo "<h1 class='encabezado'>Tus productos</h1>";
                         echo "<p class='carrito_vacio_p'>Aún no has añadido ningún producto, ve ahora y disfruta de nuestras ofertas.</p>";
