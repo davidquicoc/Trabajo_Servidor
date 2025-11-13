@@ -33,18 +33,20 @@
             ?>
             <?php 
                 $_SESSION['nombre'] = "Homero";
-                
-                if(!isset($_SESSION['nombre'])){ 
+                $_SESSION['dni'] = "05309480E";
+
+                if(!isset($_SESSION['nombre']) && !isset($_SESSION['dni'])){ 
                     echo "<h1 class='encabezado'>Inicia sesión para ver tu carrito</h1>";
-                    echo "<a href='login.html'>Inicio Sesión</a>";
+                    echo "<p class='carrito_vacio_p'>Aún no has iniciado sesión, hazlo ahora mismo para poder ver tu carrito.</p>";
+                    echo "<div class='content_carrito_vacio_a'><a href='#' class='carrito_vacio_a'>Inicio Sesión</a></div>";
                 }else{
-                    $_SESSION['dni'] = "05309480E";
                     $dni = $_SESSION['dni'];
 
                     $mostrarProductos = $conn->query("SELECT * FROM carrito WHERE dni = '$dni'");
 
                     if($mostrarProductos->num_rows > 0){
                         echo "<h1 class='encabezado'>Tus productos</h1>";
+
                         while ($producto = $mostrarProductos->fetch_assoc()) {
                         echo "<div class='producto'>
                             <div class='img-cuadrada'>
@@ -53,19 +55,27 @@
                             <h3>'" . $producto['nombre'] . "'</h3>
                             <p class='precio'>Precio: '" . $producto['precio'] . "' €</p>
                             <p class='descripcion'>'" .$producto['descripcion'] . "'</p>
-                            <form action='añadir-carrito.php' method='POST'>
-                                <input type='hidden' name='id_producto' value='" .  $producto['id_producto'] . "'>
-                                <button type='submit'>Añadir al carrito</button>
-                            </form>
                         </div>";
+                        echo "
+                        <div class='boton-conteiner'>
+                            <form action='borrar_carrito.php' method='POST'>
+                                <input type='hidden' name='dni' value='" . htmlspecialchars($dni) . "'>
+                                <input type='submit' value='Vaciar carrito' class='boton_borrar'>
+                            </form>
+                            
+                            <form action='pagado.php'>
+                                <input type='submit' value='Realizar pago' class='carrito_boton'>
+                            </form>
+                        </div>
+                        ";
                     }
                     }else{
-                        echo "<p>No hay productos disponibles.</p>";
+                        echo "<h1 class='encabezado'>Tus productos</h1>";
+                        echo "<p class='carrito_vacio_p'>Aún no has añadido ningún producto, ve ahora y disfruta de nuestras ofertas.</p>";
+                        echo "<div class='content_carrito_vacio_a'><a href='#' class='carrito_vacio_a'>Volver a por productos</a></div>";
                     }
                 }
             ?>
-            
-
         </main>
     </div>
 </body>

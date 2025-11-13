@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+}
+
+:root{
+    --azul_brillante: #0000FF;
+    --azul_claro_one: #EDF0F7;
+    --azul_claro_secundario: #d6dff1;
+    --azul_claro_chu: #CDD4EA;
+    --azul_claro_tri: #ACB9DC;
+    --azul_grisaceo: #8C9ECF;
+    --azul: #6179BD;
+    --azul_fresco: #4B67B4;
+    --azul_tormenta: #3E5593;
+    --azul_grisaceo_oscuro: #304273;
+    --azul_marino: #232F53;
+    --azul_oscuro: #151D32;
+    --negro: #080A12;
+
+    --bordes: 1.5px solid var(--azul_claro_tri);
+   --transition: all 0.3s ease;
+
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(to right, var(--azul_claro_chu), var(--azul_claro_tri));
+}
+
+.container{
+    max-width: 550px;
+    width: 80%;
+    background-color: var(--azul_claro_one);
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    border-left: 6px solid rgb(64, 64, 214);
+}
+
+h1{
+    margin-bottom: 20px;
+}
+
+p{
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: var(--negro);
+}
+
+a:hover{
+    color: var(--azul_brillante);
+}

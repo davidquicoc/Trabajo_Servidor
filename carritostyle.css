@@ -20,6 +20,9 @@
     --azul_marino: #232F53;
     --azul_oscuro: #151D32;
     --negro: #080A12;
+
+    --bordes: 1.5px solid var(--azul_claro_tri);
+    --transition: all 0.3s ease;
 }
 
 /* BODY */
@@ -91,6 +94,12 @@ body{
     color: var(--azul_tormenta);
 }
 
+/* main */
+main{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
 /* PRODUCTOS */
 .productos {
     display: flex;
@@ -148,6 +157,77 @@ body{
 .encabezado{
     text-transform: uppercase;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 40px;
+    font-size: 60px;
 }
 
+.carrito_vacio_p{
+    text-align: center;
+    padding-top: 40px;
+    font-size: 24px;
+}
+
+
+/* Enlace que simula botón cuando no hay ningún producto */
+.content_carrito_vacio_a{
+    text-align: center;
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+.carrito_vacio_a{
+    font-size: 24px;
+    text-decoration: none;
+    background-color: var(--azul_claro_tri);
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    color: var(--azul_claro_one);
+}
+
+.carrito_vacio_a:hover{
+    background-color: var(--azul_grisaceo);
+    transition: var(--transition);
+}
+
+/* Botón borrar */
+#boton_alinear{
+    text-align: right;
+}
+
+.boton_borrar{
+    background-color: var(--azul_claro_tri);
+    padding: 14px;
+    font-size: 24px;
+    border-radius: 6px;
+    border: none;
+    color: var(--azul_claro_one);
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.boton_borrar:hover{
+    background-color: var(--azul_grisaceo);
+    transition: var(--transition);
+}
+
+/* Botón pago */
+.boton-conteiner{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.carrito_boton{
+    background-color: var(--azul_claro_tri);
+    padding: 14px;
+    font-size: 24px;
+    border-radius: 6px;
+    border: none;
+    color: var(--azul_claro_one);
+}
+
+.carrito_boton:hover{
+    background-color: var(--azul_grisaceo);
+    transition: var(--transition);
+}
