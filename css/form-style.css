@@ -109,15 +109,17 @@ button:hover{
     margin-bottom: 20px;
 }
 
-.enlace a {
+.enlace-login {
+    margin-top: 20px;
+}
+
+.enlace a,
+.enlace-login a {
     text-decoration: none;
     color: var(--negro);
 }
 
-.enlace a:hover{
+.enlace a:hover,
+.enlace-login a:hover {
     color: var(--azul_brillante);
 }
-
-/* HEADER */
-
-/* FOOTER */

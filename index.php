@@ -1,14 +1,12 @@
 <?php
 session_start();
+require_once 'config.php';
 
 if (!isset($_SESSION['nombre'])) {
     header("Location: login.php");
     exit();
 }
 
-require_once 'config.php';
-
-// Obtener orden desde GET
 $orden = $_GET['orden'] ?? '';
 switch ($orden) {
     case 'id_asc':
@@ -34,16 +32,13 @@ switch ($orden) {
 }
 
 $resultado = $conn->query($sql);
-
-$carrito = $_SESSION['carrito'] ?? [];
-$carritoActivo = !empty($carrito) ? 'carrito-activo' : '';
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inicio</title>
     <link rel="stylesheet" href="./css/index.css">
     <!--Fontawesome-->
     <script src="https://kit.fontawesome.com/7fc225aff5.js" crossorigin="anonymous"></script>
@@ -53,13 +48,13 @@ $carritoActivo = !empty($carrito) ? 'carrito-activo' : '';
         <header class="header">
             <div class="header-logo">
                 <img src="./img/logojd.png">
-                <h2>LOGO</h2>
+                <h2>VVOnline</h2>
             </div>
             <div class="header-nav">            
                 <?php
                 if (isset($_SESSION['nombre'])) {
-                    echo "<a href='carrito.php'><i class='fa-solid fa-cart-shopping $carritoActivo'></i></a>";
-                    echo "<p>" . $_SESSION['nombre'] . ". <a href='logout.php'>Cerrar sesión</a></p>";
+                    echo "<a href='carrito.php' title='Carrito'><i class='fa-solid fa-cart-shopping'></i></a>";
+                    echo "<p>" . $_SESSION['nombre'] . "(<a href='logout.php'>Cerrar sesión</a>)</p>";
                 } else {
                     echo "<p>Usted no se ha identificado. (<a href='login.php'>Acceder</a>)</p>";
                 }
@@ -78,8 +73,15 @@ $carritoActivo = !empty($carrito) ? 'carrito-activo' : '';
                     <option value="nombre_asc">Nombre A-Z</option>
                     <option value="nombre_desc">Nombre Z-A</option>
                 </select>
-                <button type="submit" class="button-select">Aplicar</button>
+                &nbsp;&nbsp;&nbsp;
+                <button type="submit" class="button-select"><i class="fa-solid fa-filter"></i></button>
             </form>
+            <?php
+                if (isset($_SESSION['confirmacion-carrito'])) {
+                    echo "<p class='mensaje-sql'>" . $_SESSION['confirmacion-carrito'] . "</p>";
+                    unset($_SESSION['confirmacion-carrito']);
+                }
+                ?>
             <section class="productos">
             <?php
                 if ($resultado->num_rows > 0) {
@@ -88,17 +90,17 @@ $carritoActivo = !empty($carrito) ? 'carrito-activo' : '';
                             <div class='img-cuadrada'>
                                 <img src='" . $producto['imagen'] . "' alt='" . $producto['nombre'] . "'>
                             </div>
-                            <h3>'" . $producto['nombre'] . "'</h3>
-                            <p class='precio'>Precio: '" . $producto['precio'] . "' €</p>
-                            <p class='descripcion'>'" .$producto['descripcion'] . "'</p>
+                            <h3>" . $producto['nombre'] . "</h3>
+                            <p class='precio'>Precio: " . $producto['precio'] . " €</p>
+                            <p class='descripcion'>" .$producto['descripcion'] . "</p>
                             <form action='añadir-carrito.php' method='POST'>
-                                <input type='hidden' name='dni' value '" . $_SESSION['dni'] . "'>;
+                                <input type='hidden' name='dni' value='" . $_SESSION['dni'] . "'>
                                 <input type='hidden' name='id_producto' value='" .  $producto['id'] . "'>
                                 <input type='hidden' name='nombre' value='" . $producto['nombre'] . "'>
                                 <input type='hidden' name='descripcion' value='" . $producto['descripcion'] . "'>
                                 <input type='hidden' name='precio' value='" . $producto['precio'] . "'>
                                 <input type='hidden' name='imagen' value='" . $producto['imagen'] . "'>
-                                <button type='submit' class='button-producto'>Añadir al carrito</button>
+                                <input type='submit' class='button-producto' value='Añadir al carrito'>
                             </form>
                         </div>";
                     }

@@ -32,11 +32,11 @@ function errorLogin($error) {
             <form action="login-confirm.php" method="POST">
                 <h2>Inicio Sesión</h2>
                 <?= errorLogin($error); ?>
-                <input type="email" name="email" id="email" placeholder="Nombre" required>
+                <input type="email" name="email" id="email" placeholder="Email" required>
                 <input type="password" name="password" id="password" placeholder="Contraseña" required>
                 <button type="submit">Enviar</button>
             </form>
-            <p class="enlace">No tienes una cuenta. <a href="registro.php">Registrate aquí</a></p>
+            <p class="enlace-login">No tienes una cuenta. <a href="registro.php">Registrate aquí</a></p>
         </div>
     </div>
 

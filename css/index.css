@@ -89,11 +89,7 @@ body{
 }
 
 .fa-solid:hover {
-    color: var(--negro);
-}
-
-.carrito-activo {
-    color: var(--azul_tormenta);
+    color: var(--azul_fresco);
 }
 
 main {
@@ -107,6 +103,15 @@ main {
 main h2 {
     margin: 10px 0;
     text-transform: uppercase;
+}
+
+.mensaje-sql {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    padding: 8.5px;
+    border-radius: 10px;
+    background: var(--azul_claro_tri);
+    color: var(--azul_tormenta);
 }
 
 /* PRODUCTOS */
@@ -177,6 +182,7 @@ main h2 {
     transition: var(--transition);
     border: none;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .button-select:hover {
@@ -194,6 +200,7 @@ main h2 {
     background-color: var(--azul_claro_secundario);
     border: none;
     transition: var(--transition);
+    cursor: pointer;
 }
 
 .button-producto:hover{
