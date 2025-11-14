@@ -63,7 +63,7 @@
             $hay_errores_individuales = true;
         }else{
             $checkEmail = $conn->query("SELECT correo FROM usuarios WHERE correo = '$email'");
-                if($checkDNI->num_rows > 0){
+                if($checkEmail->num_rows > 0){
                     $_SESSION['email_registrado'] = "El email ya esta registrado";
                     $hay_errores_individuales = true;
                 }

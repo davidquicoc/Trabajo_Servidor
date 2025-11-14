@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/carrito.css">
     <title>Carrito</title>
-        <!--Fontawesome-->
+    <!--Fontawesome-->
     <script src="https://kit.fontawesome.com/7fc225aff5.js" crossorigin="anonymous"></script>
 </head>
 <body>
